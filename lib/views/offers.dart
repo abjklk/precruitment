@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:precruitment/views/temp_screen.dart';
 
 class OfferTile extends StatelessWidget {
   final String companyName;

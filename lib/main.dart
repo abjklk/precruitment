@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:precruitment/helper/authenticate.dart';
 import 'package:precruitment/helper/helperfunctions.dart';
+import 'package:precruitment/views/alumini_screen.dart';
 // import 'package:precruitment/views/chatRoomsScreen.dart';
 import 'package:precruitment/views/home.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
 // import 'package:precruitment/views/signup.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await FlutterDownloader.initialize(debug: true);
   runApp(MyApp());
 }
 
@@ -43,12 +46,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     // print(userIsLoggedIn);
     return MaterialApp(
-      title: 'Precruitment',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: userIsLoggedIn ? Home() : Authenticate(),
-    );
+        title: 'Precruitment',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: userIsLoggedIn ? Home() : Authenticate(),
+        routes: {
+          AluminiScreen.routeName: (ctx) => AluminiScreen(),
+        });
   }
 }
 

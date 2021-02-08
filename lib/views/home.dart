@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:precruitment/helper/authenticate.dart';
 import 'package:precruitment/helper/helperfunctions.dart';
 import 'package:precruitment/services/auth.dart';
+import 'package:precruitment/views/alumini_screen.dart';
 import 'package:precruitment/views/chatRoomsScreen.dart';
 import 'package:precruitment/views/offers.dart';
 import 'package:precruitment/views/search.dart';
+import 'package:precruitment/views/temp_screen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,7 +20,7 @@ class _HomeState extends State<Home> {
     Offers(),
     ChatRoom(),
     Text('profile'),
-    Text('unknown'),
+    TempScreen(),
   ];
 
   List<FloatingActionButton> _fabOptions = <FloatingActionButton>[
